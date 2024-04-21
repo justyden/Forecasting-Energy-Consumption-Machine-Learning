@@ -1,0 +1,46 @@
+<!-- home.html -->
+{% extends 'consumption_forecast/base.html' %}
+
+{% block title %}Energy Consumption Forecast{% endblock %}
+
+{% block content %}
+<div>
+    <div class="about-content">
+        <h2>High vs. Low Energy Consumption</h3>
+            <br>
+            <form id="csvForm" method="post" enctype="multipart/form-data" action="{% url 'upload_csv' %}">
+                {% csrf_token %}
+                <input type="file" id="csvFile" name="csv_file" accept=".csv" required>
+                <button type="submit" id="submitBtn" disabled>Upload CSV</button>
+            </form>
+            
+            <script>
+            document.getElementById('csvFile').addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    document.getElementById('submitBtn').disabled = false;
+                } else {
+                    document.getElementById('submitBtn').disabled = true;
+                }
+            });
+            </script>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>:</strong> </li>
+            <li><strong>:</strong> </li>
+            <li><strong>:</strong> </li>
+        </ul>
+
+        <h3>How to Use</h3>
+        <ul>
+        </ul>
+
+        <h3>Developers</h3>
+        <ul>
+            <li>Tyler Thompson</li>
+            <li>Joshua Murillo</li>
+            <li>Krish Parikh</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

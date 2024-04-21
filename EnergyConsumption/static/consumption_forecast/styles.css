@@ -1,0 +1,30 @@
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.center-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form {
+    text-align: center;
+}
+
+.result-content {
+    text-align: center;
+}
+
+/* Navigation links */
+.nav {
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the text */
+    margin-right: 10px; /* Spacing between links */
+}
+
+.dark-gray {
+    background-color: #333333 !important; /* Dark gray background color */
+}
