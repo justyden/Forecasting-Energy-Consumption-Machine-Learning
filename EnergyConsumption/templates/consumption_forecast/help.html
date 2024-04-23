@@ -1,5 +1,6 @@
 <!-- help.html -->
 {% extends 'consumption_forecast/base.html' %}
+{% load static %}
 
 {% block title %}Help{% endblock %}
 
@@ -8,18 +9,22 @@
     <div class="about-content">
         <h2>Application Overview</h3>
         <p>
+            This project aims to develop a machine learning-based solution for forecasting energy consumption. Historical 
+            energy consumption data will be analyzed to identify patterns and trends using data visualization techniques. Two 
+            phases of machine learning algorithms will then be implemented. The first phase algorithm will be used for 
+            classification to predict energy consumption categorized as being periods of typical, higher, or lower 
+            than normal energy consumption. The second phase algorithm will then be used to quantitatively forecast 
+            energy consumption in megawatt hours (MWh).
         </p>
+        <br>
 
         <h3>Key Features</h3>
         <ul>
-            <li><strong>:</strong> </li>
-            <li><strong>:</strong> </li>
-            <li><strong>:</strong> </li>
+            <li><strong>SVM (Support Vector Machines):</strong> Checks if energy consumption is low or high. </li>
+            <li><strong>Linear Regression:</strong> Gives important statistical information. </li>
+            <li><strong>Website Implementation:</strong> Developed using Django.</li>
         </ul>
-
-        <h3>How to Use</h3>
-        <ul>
-        </ul>
+        <br>
 
         <h3>Developers</h3>
         <ul>
@@ -27,6 +32,10 @@
             <li>Joshua Murillo</li>
             <li>Krish Parikh</li>
         </ul>
+        <br>
+
+        <h3>How it Works</h3>
+        <embed src="{% static 'consumption_forecast/Energy_Forecast_Trained_Use.pdf' %}" type="application/pdf" width="100%" height="600px" /></li>
     </div>
 </div>
 {% endblock %}

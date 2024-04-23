@@ -1,0 +1,48 @@
+{% extends 'consumption_forecast/base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="rounded border border-secondary p-4 mb-4">
+                    <div class="text-center"> <!-- Added text-center class to center the "Results" heading -->
+                        <h1 class="mb-4">Results</h1>
+                    </div>
+                    <p>Number of True values (High energy usage) predicted by Model One: {{ true_count1 }}</p>
+                    <p>Number of True values (Low energy usage) predicted by Model Two: {{ true_count2 }}</p>
+                    <p>Number of False-False values (Typical energy usage) predicted by the SVM Models: {{ typical_sum }}</p>
+                    <p>Mean of sample: {{ mean }}</p>
+                    <p>Variance of sample: {{ variance }}</p>
+                    <p>Standard deviation of sample: {{ std_deviation }}</p>
+                </div>
+                <!-- Display the visualizations -->
+                <div class="text-center"> <!-- Centered the visualizations -->
+                    <h2>Visualizations</h2>
+                    <div class="row justify-content-center">
+                        <img src="data:image/png;base64,{{ plot_data.global_active_power }}" class="img-style">
+                        
+                        <!-- Display histogram of global active power -->
+                        <img src="data:image/png;base64,{{ plot_data.histogram_global_active_power }}" class="img-style">
+                        
+                        <!-- Display box plot of global active power -->
+                        <img src="data:image/png;base64,{{ plot_data.boxplot_global_active_power }}" class="img-style">
+                        
+                        <!-- Display scatter plot of global active power vs. voltage -->
+                        <img src="data:image/png;base64,{{ plot_data.scatterplot_global_active_power_voltage }}" class="img-style">
+                        
+                        <!-- Display correlation heatmap -->
+                        <img src="data:image/png;base64,{{ plot_data.correlation_heatmap }}" class="img-style">
+                        
+                        <!-- Display pair plot of selected variables -->
+                        <img src="data:image/png;base64,{{ plot_data.pairplot_selected_variables }}" class="img-style">
+                        
+                        <!-- Display violin plot of global active power by hour -->
+                        <img src="data:image/png;base64,{{ plot_data.violinplot_global_active_power_hour }}" class="img-style">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

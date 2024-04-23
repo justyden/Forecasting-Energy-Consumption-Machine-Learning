@@ -1,5 +1,6 @@
 <!-- home.html -->
 {% extends 'consumption_forecast/base.html' %}
+{% load static %}
 
 {% block title %}Energy Consumption Forecast{% endblock %}
 
@@ -10,7 +11,7 @@
             <br>
             <form id="csvForm" method="post" enctype="multipart/form-data" action="{% url 'upload_csv' %}">
                 {% csrf_token %}
-                <input type="file" id="csvFile" name="csv_file" accept=".csv" required>
+                <input type="file" id="csvFile" name="csv_file" accept=".csv, .xls, .xlsx" required>
                 <button type="submit" id="submitBtn" disabled>Upload CSV</button>
             </form>
             
@@ -23,24 +24,13 @@
                 }
             });
             </script>
-
-        <h3>Key Features</h3>
-        <ul>
-            <li><strong>:</strong> </li>
-            <li><strong>:</strong> </li>
-            <li><strong>:</strong> </li>
-        </ul>
-
-        <h3>How to Use</h3>
-        <ul>
-        </ul>
-
-        <h3>Developers</h3>
-        <ul>
-            <li>Tyler Thompson</li>
-            <li>Joshua Murillo</li>
-            <li>Krish Parikh</li>
-        </ul>
+        <br>
+        <br>
+        <h4>Example CSV file</h4>
+        <img src="{% static 'consumption_forecast/Energy_Forecast_Example_1.png' %}" alt="Energy Forecast Example 1" width="900px" height="auto">
+        <br>
+        <br>
+        <h4>Please refer to the help section if you need more information. The CSV file input is very specific. </h4>
     </div>
 </div>
 {% endblock %}

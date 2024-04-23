@@ -28,3 +28,8 @@ body {
 .dark-gray {
     background-color: #333333 !important; /* Dark gray background color */
 }
+
+.img-style {
+    width: 700px !important;
+    height: auto !important;
+}
